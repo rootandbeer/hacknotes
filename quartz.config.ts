@@ -16,7 +16,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
+    baseUrl: "hacknotes.rootandbeer.com",
     ignorePatterns: ["private", "templates", ".obsidian", "Templates"],
     defaultDateType: "created",
     theme: {
