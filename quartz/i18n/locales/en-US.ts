@@ -32,9 +32,9 @@ export default {
     explorer: {
       title: "Explorer",
     },
-    footer: {
-      createdWith: "Created with",
-    },
+     /*footer: {
+      createdWith: "",
+    }, */
     graph: {
       title: "Graph View",
     },

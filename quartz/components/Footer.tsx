@@ -11,7 +11,7 @@ export default ((opts?: Options) => {
   const Footer: QuartzComponent = ({ displayClass, cfg }: QuartzComponentProps) => {
     const year = new Date().getFullYear()
     const links = opts?.links ?? []
-    return (
+    /* return (
       <footer class={`${displayClass ?? ""}`}>
         <p>
           {i18n(cfg.locale).components.footer.createdWith}{" "}
@@ -25,7 +25,7 @@ export default ((opts?: Options) => {
           ))}
         </ul>
       </footer>
-    )
+    ) */
   }
 
   Footer.css = style
