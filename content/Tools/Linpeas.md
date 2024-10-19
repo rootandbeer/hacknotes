@@ -1,3 +1,10 @@
+---
+title: Linpeas
+description: 
+draft: false
+tags: 
+date:
+---
 
 Run without downloading
 ```bash
@@ -8,6 +15,7 @@ Download if `curl` is unavailable
 ```bash
 wget https://github.com/peass-ng/PEASS-ng/releases/latest/download/linpeas.sh
 ```
-```dataview
-list from [[]] and !outgoing([[]])
-```
+
+---
+### Supporting Content
+

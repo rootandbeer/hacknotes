@@ -1,7 +1,11 @@
 ---
-title: 
-tags:
+title: Bash Reverse Shells
+description: 
+draft: 
+tags: 
+date: 2024-10-18
 ---
+
 ## Bash TCP Reverse Shells
 These TCP reverse shells will attempt to make a connection to your KALI machine using port 9999. Make sure to setup a TCP Listener.
 

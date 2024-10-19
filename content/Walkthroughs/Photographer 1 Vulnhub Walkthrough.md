@@ -6,7 +6,7 @@ By accessing the Samba share using **smbclient** and downloading two files, incl
 
 Once inside the system **[[LinPEAS]]** located credentials for the MySQL database, which allowed further exploration of the system. A key discovery was that the PHP 7.2 binary had the SUID bit set, enabling privilege escalation to root using a technique from **GTFOBins**.
 
-**Run [[nmap]] to discover ports 80,139,445,8000:**
+**Run [[Nmap]] to discover ports 80,139,445,8000:**
 
 ```bash
 └─$ nmap -A -sC -p- 192.168.5.124
@@ -53,7 +53,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 176.97 seconds
 ```
 
-**Run enum4linux to discover samba shares and local users:**
+**Run [[Enum4linux]] to discover samba shares and local users:**
 
 ```bash
 ... 
@@ -122,7 +122,7 @@ Your site is ready now.
 Don't forget your secret, my babygirl ;)
 ```
 
-**Run dirbuster to discover the `/admin` page:**
+**Run [[Dirbuster]] to discover the `/admin` page:**
 
 ```bash
 └─$ dirb http://192.168.5.124:8000 /usr/share/wordlists/dirb/common.txt -f
@@ -156,7 +156,7 @@ GENERATED WORDS: 4612
 
 >**[daisa@photographer.com](mailto:daisa@photographer.com):babygirl**
 
-**Use searchsploit to find a koken exploit affecting the specific version of koken on the target:**
+**Use [[Searchsploit]] to find a koken exploit affecting the specific version of koken on the target:**
 
 ```bash
 ─$ searchsploit koken       
@@ -179,7 +179,7 @@ File Type: ASCII text
 
 **Follow the [instructions in the exploit](https://www.exploit-db.com/exploits/48706?ref=rootandbeer.com) to get a [[Reverse Shell]].**
 
-**Run [[linpeas]] to find the local mysql database user password:**
+**Run [[Linpeas]] to find the local mysql database user password:**
 
 ```bash
 ╔══════════╣ Searching passwords in config PHP files

