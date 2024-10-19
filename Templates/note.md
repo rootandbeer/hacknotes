@@ -6,9 +6,5 @@ tags:
 date:
 ---
 
-
-
-
-
 ---
-### Supporting Content
+

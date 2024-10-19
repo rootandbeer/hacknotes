@@ -13,4 +13,3 @@ searchsploit <service>
 
 
 ---
-### Supporting Content

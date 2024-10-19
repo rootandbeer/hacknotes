@@ -16,4 +16,3 @@ nmap -A -sC -p- <IP>
 ```
 
 ---
-### Supporting Content

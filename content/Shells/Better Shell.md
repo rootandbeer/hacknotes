@@ -30,8 +30,4 @@ export TERM=linux    ### Specify "linux" to run nano, vi, sudoedit, etc.
 stty rows 46 columns 169    ### optional, resize window
 ```
 
-## Referenced In
-```dataview
-list from [[]] and !outgoing([[]])
-
-```
+---

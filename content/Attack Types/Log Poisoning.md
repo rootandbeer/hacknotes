@@ -128,7 +128,4 @@ To protect against log poisoning attacks, it's important to follow best practice
 4. **Monitor for Anomalies**:
    Set up monitoring to detect unusual or unexpected entries in your logs. Automated tools can help by flagging suspicious patterns, like injection attempts or log flooding.
 
-## Referenced In
-```dataview
-list from [[]] and !outgoing([[]])
-```
+---

@@ -12,4 +12,4 @@ gobuster dir -u <IP> -e -r -x html,htm,asp,aspx,jsp,php,cgi,txt,xml -w /usr/shar
 ```
 
 ---
-### Supporting Content
+

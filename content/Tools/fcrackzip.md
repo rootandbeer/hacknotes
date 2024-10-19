@@ -12,5 +12,5 @@ fcrackzip -u -D -p /usr/share/wordlists/rockyou.txt <zipfile>
 ```
 
 ---
-### Supporting Content
+
 

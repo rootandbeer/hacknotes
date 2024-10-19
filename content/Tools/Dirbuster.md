@@ -11,4 +11,3 @@ dirb http://<target> /usr/share/wordlists/dirb/common.txt -f
 ```
 
 ---
-### Supporting Content

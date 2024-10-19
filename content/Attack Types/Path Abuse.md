@@ -155,8 +155,4 @@ chmod +x ./cleanup.sh
   strace ./vulnerable_suid_program
   ```
 
-
-## Referenced In
-```dataview
-list from [[]] and !outgoing([[]])
-```
+---

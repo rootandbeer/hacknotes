@@ -60,7 +60,4 @@ Here, the application unserializes the cookie and creates a User object, includi
 
 While this exact scenario may not be commonly found in the wild, it illustrates how even a small change in attribute values can expose significant vulnerabilities due to insecure deserialization. By understanding how serialization works, attackers can find various ways to exploit these weaknesses.
 
-## Referenced In
-```dataview
-list from [[]] and !outgoing([[]])
-```
+---

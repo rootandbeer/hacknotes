@@ -14,4 +14,4 @@ ffuf -w <wordlist> -fs 0 -u http://<target>/script.php?FUZZ=/etc/passwd
 
 
 ---
-### Supporting Content
+
