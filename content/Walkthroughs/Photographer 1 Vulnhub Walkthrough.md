@@ -167,7 +167,7 @@ Koken CMS 0.22.24 - Arbitrary File Upload (Authenticated)                       
 ---------------------------------------------------------------------------------------------------------- ---------------------------------
 Shellcodes: No Results
                                                                                                                                             
-┌──(vagrant㉿kali)-[~/Downloads]
+
 └─$ searchsploit -x 48706
   Exploit: Koken CMS 0.22.24 - Arbitrary File Upload (Authenticated)
       URL: https://www.exploit-db.com/exploits/48706

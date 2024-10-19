@@ -11,6 +11,5 @@ date: 2024-10-18
 fcrackzip -u -D -p /usr/share/wordlists/rockyou.txt <zipfile>
 ```
 
----
 
 

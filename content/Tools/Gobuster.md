@@ -11,5 +11,4 @@ date: 2024-10-18
 gobuster dir -u <IP> -e -r -x html,htm,asp,aspx,jsp,php,cgi,txt,xml -w /usr/share/wordlists/dirb/common.txt
 ```
 
----
 

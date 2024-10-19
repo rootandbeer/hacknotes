@@ -1,7 +1,11 @@
 ---
 title: 
-tags:
+description: 
+draft: 
+tags: 
+date:
 ---
+
 ## Bash
 
 ```bash
@@ -36,4 +40,3 @@ nc KALI_IP 9001 -e sh
 ```
 
 
----

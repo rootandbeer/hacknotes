@@ -15,4 +15,4 @@ Performs an aggressive scan of all TCP ports on the target IP to detect the oper
 nmap -A -sC -p- <IP>
 ```
 
----
+

