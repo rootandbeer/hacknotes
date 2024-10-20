@@ -3,7 +3,7 @@
 
 Corrosion 2 is a medium difficulty box that demonstrated various attack techniques and exploits, focusing on privilege escalation, file path traversal, and password cracking. The initial foothold was gained through a file path traversal vulnerability, which allowed access to sensitive files, including password hashes. These hashes were cracked, enabling further access. Exploiting SUID binaries was central to elevating privileges, with the `gawk` binary playing a key role in achieving root access. The challenge required understanding misconfigurations, leveraging binaries with elevated permissions, and carefully navigating access controls to achieve full system compromise. These techniques highlight the importance of patching common vulnerabilities and securing binaries to prevent unauthorized escalation.
 
-**Run *[[nmap]] -A* scan against all TCP ports:**
+**Run *[[Nmap]] -A* scan against all TCP ports:**
 
 ```bash
 └─$ nmap -A -sC -p- 192.168.5.114
@@ -29,7 +29,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 12.43 seconds
 ```
 
-**Run *nikto* scan on port 8080 to discover "*backup.zip*":**
+**Run [[Nikto]] scan on port 8080 to discover "*backup.zip*":**
 
 ```bash
 └─$ nikto -timeout 2 -h http://192.168.5.114:8080
@@ -184,7 +184,7 @@ sshd:*:18887:0:99999:7:::
 jaye:$6$Chqrqtd4U/B1J3gV$YjeAWKM.usyi/JxpfwYA6ybW/szqkiI1kerC4/JJNMpDUYKavQbnZeUh4WL/fB/4vrzX0LvKVWu60dq4SOQZB0:18887:0:99999:7:::
 ```
 
-**Crack the randy user password with JTR and rockyou.txt password list:**
+**Crack the randy user password with John The Ripper and rockyou.txt password list:**
 
 ```bash
 └─$ john --wordlist=/usr/share/wordlists/rockyou.txt ./corrosion.txt
@@ -255,4 +255,3 @@ root@corrosion:/home/randy# cat /root/root.txt
 2fdbf8d4f894292361d6c72c8e833a4b
 ```
 
----

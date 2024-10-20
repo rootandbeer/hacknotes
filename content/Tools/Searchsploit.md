@@ -11,5 +11,7 @@ date: 2024-10-18
 searchsploit <service>
 ```
 
-
-
+**Download exploit:**
+```bash
+searchsploit -m <exploit_path>
+```

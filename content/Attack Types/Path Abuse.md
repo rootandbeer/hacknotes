@@ -155,4 +155,3 @@ chmod +x ./cleanup.sh
   strace ./vulnerable_suid_program
   ```
 
----

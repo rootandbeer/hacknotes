@@ -1,6 +1,6 @@
 [https://www.vulnhub.com/entry/corrosion-1,730/](https://www.vulnhub.com/entry/corrosion-1,730/?ref=rootandbeer.com)
 
-The "Corrosion: 1" CTF challenge on VulnHub, though labeled as Easy, presented multiple layers of complexity, including service enumeration, [[Log Poisoning]], and [[path abuse]] to achieve root access. The initial foothold was gained through discovering and exploiting a vulnerable PHP script (randylogs.php) using [[Log Poisoning]] via an SFTP login. This allowed for remote command execution, leading to a [[reverse shell]]. Privilege escalation involved identifying a world-readable backup file, cracking a password-protected ZIP file, and leveraging a [[path abuse]] vulnerability in a custom script to execute arbitrary commands as root. The challenge concluded with obtaining the root flag, showcasing a combination of enumeration, scripting, and privilege escalation techniques.
+The "Corrosion: 1" CTF challenge on VulnHub, though labeled as Easy, presented multiple layers of complexity, including service enumeration, [[Log Poisoning]], and [[Path Abuse]] to achieve root access. The initial foothold was gained through discovering and exploiting a vulnerable PHP script (randylogs.php) using [[Log Poisoning]] via an SFTP login. This allowed for remote command execution, leading to a [[Reverse Shell]]. Privilege escalation involved identifying a world-readable backup file, cracking a password-protected ZIP file, and leveraging a [[Path Abuse]] vulnerability in a custom script to execute arbitrary commands as root. The challenge concluded with obtaining the root flag, showcasing a combination of enumeration, scripting, and privilege escalation techniques.
 
 **Run *[[Nmap]]* -A scan to discover ports 22 & 80 are open:**
 
@@ -250,8 +250,7 @@ void main()
 }
 ```
 
-**The `cat` command does not use an absolute path, we can use [[path abuse]]**
-
+**The `cat` command does not use an absolute path, we can use [[Path Abuse]]**
 
 **SSH into the system using randy's password:**
 

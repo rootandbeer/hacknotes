@@ -8,7 +8,7 @@ Accessing the SMB share, the user finds a configuration that allows a [[Reverse 
 
 This walkthrough demonstrates techniques such as service enumeration, brute force attacks, [[Reverse Shell]] execution, and privilege escalation through cron jobs and writable directories.
 
-**Run initial [[nmap]] scan to discover ports 22, 80, 139, and 445 are open:**
+**Run initial [[Nmap]] scan to discover ports 22, 80, 139, and 445 are open:**
 
 ```bash
 └─$ nmap -A -sC -p- 192.168.5.122
@@ -43,7 +43,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 14.03 seconds
 ```
 
-**Run [[gobuster]] to discover the `foodservice` directory; we checked out this directory but didn't find much of value:**
+**Run [[Gobuster]] to discover the `foodservice` directory; we checked out this directory but didn't find much of value:**
 
 ```bash
 └─$ gobuster dir -u http://192.168.5.122 -e -r -x html,htm,asp,aspx,jsp,php,cgi,txt,xml -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt
@@ -78,7 +78,7 @@ Finished
 ===============================================================
 ```
 
-**Run enum4linux to discover the shares and users `randy` and `ralph` on the samba server:**
+**Run [[Enum4linux]] to discover the shares and users `randy` and `ralph` on the samba server:**
 
 ```bash
 └─$ enum4linux -r 192.168.5.122

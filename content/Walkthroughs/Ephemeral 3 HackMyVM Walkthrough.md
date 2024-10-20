@@ -4,7 +4,7 @@ In the "Ephemeral 3" CTF challenge, the exploitation process involved several ke
 
 Once inside, privilege escalation was achieved by exploiting a sudo misconfiguration that allowed the use of `curl` as the user "henry." This was used to modify the `/etc/passwd` file, adding a new user with root privileges. The challenge was successfully completed by accessing the root account and capturing the final flag.
 
-**Initial [[nmap]] scan of the box to notice ports `80` and `22` are open**
+**Initial [[Nmap]] scan of the box to notice ports `80` and `22` are open**
 
 ```bash
 └─$ nmap -A -sC -p- 192.168.5.123                         
@@ -29,7 +29,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 10.12 seconds
 ```
 
-**Run [[gobuster]] to discover the `/agency` and `/note.txt` objects:**
+**Run [[Gobuster]] to discover the `/agency` and `/note.txt` objects:**
 
 ```bash
 └─$ gobuster dir -u http://192.168.5.123 -e -r -x html,htm,asp,aspx,jsp,php,cgi,txt,xml -w /usr/share/wordlists/dirb/common.txt
@@ -50,7 +50,7 @@ http://192.168.5.123/note.txt             (Status: 200) [Size: 159]
 > Hey! I just generated your keys with OpenSSL. You should be able to use your private key now!  
 > If you have any questions just email me at [henry@ephemeral.com](mailto:henry@ephemeral.com)
 
-**Lets see if we can find OpenSSL and SSH exploit and download it**
+**Lets see if we can find OpenSSL and SSH exploit using [[Searchsploit]] and download it**
 
 ```bash
 └─$ searchsploit openssl         

