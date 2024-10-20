@@ -3,7 +3,7 @@ title:
 description: 
 draft: 
 tags: 
-date:
+date: 2024-10-18
 ---
 
 ## Bash

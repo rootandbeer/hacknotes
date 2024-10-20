@@ -1,7 +1,7 @@
 ---
 title: Bash Reverse Shells
 description: 
-draft: 
+draft: false
 tags: 
 date: 2024-10-18
 ---
