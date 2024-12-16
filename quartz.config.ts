@@ -19,6 +19,7 @@ const config: QuartzConfig = {
     baseUrl: "hacknotes.rootandbeer.com",
     ignorePatterns: ["private", "templates", ".obsidian", "Templates"],
     defaultDateType: "created",
+    generateSocialImages: false,
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
