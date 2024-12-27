@@ -2,7 +2,7 @@
 
 In this box, an [[Nmap]] scan revealed open ports HTTP (80, 8000) and SMB (139, 445). The scan also identified services running on these ports, such as Apache and Samba. Followed this up by using **enum4linux** to enumerate Samba shares and users, which revealed the presence of potentially sensitive files.
 
-By accessing the Samba share using **smbclient** and downloading two files, including a WordPress backup and a text file containing a potential password hint. Using **Dirbuster** an /admin directory on the Koken CMS running on port 8000 was identified. Logging in with the discovered credentials, using an exploit from **searchsploit** to upload a malicious file and gain a [[Reverse Shell]].
+By accessing the Samba share using **smbclient** and downloading two files, including a WordPress backup and a text file containing a potential password hint. Using **Dirbuster** an /admin directory on the Koken CMS running on port 8000 was identified. Logging in with the discovered credentials, using an exploit from **searchsploit** to upload a malicious file and gain a [[_MOCS/Reverse Shells]].
 
 Once inside the system **[[LinPEAS]]** located credentials for the MySQL database, which allowed further exploration of the system. A key discovery was that the PHP 7.2 binary had the SUID bit set, enabling privilege escalation to root using a technique from **GTFOBins**.
 
@@ -177,9 +177,9 @@ Shellcodes: No Results
 File Type: ASCII text
 ```
 
-**Follow the [instructions in the exploit](https://www.exploit-db.com/exploits/48706?ref=rootandbeer.com) to get a [[Reverse Shell]].**
+**Follow the [instructions in the exploit](https://www.exploit-db.com/exploits/48706?ref=rootandbeer.com) to get a [[_MOCS/Reverse Shells]].**
 
-**Run [[Linpeas]] to find the local mysql database user password:**
+**Run [[LinPEAS]] to find the local mysql database user password:**
 
 ```bash
 ╔══════════╣ Searching passwords in config PHP files

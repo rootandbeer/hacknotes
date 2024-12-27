@@ -15,6 +15,3 @@ curl -L https://github.com/peass-ng/PEASS-ng/releases/latest/download/linpeas.sh
 ```bash
 wget https://github.com/peass-ng/PEASS-ng/releases/latest/download/linpeas.sh
 ```
-
-
-

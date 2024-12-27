@@ -1,10 +1,10 @@
 ---
 title: Netcat Reverse Shells
-description: 
-draft: false
-tags: 
-date: 2024-10-19
+tags: shells/reverse/netcat
+share: true
+date: 2024-12-15
 ---
+
 ## Basic Netcat Reverse Shells
 
 ```bash

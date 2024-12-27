@@ -1,9 +1,9 @@
 ---
-title: Bash Reverse Shells
-description: 
-draft: false
-tags: 
-date: 2024-10-18
+title: "Bash Reverse Shells"
+tags: [shells/reverse/bash]
+category: [reverse-shells, linux]
+share: true
+date: 2024-12-15
 ---
 
 ## Bash TCP Reverse Shell

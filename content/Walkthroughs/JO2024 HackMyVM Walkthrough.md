@@ -1,6 +1,6 @@
 ![[JO2024 hackmyvm.jpg]]
 
-This medium challenge box employed a variety of attacks and techniques, including a PHP [[Cookie Serialization]] Attack that leveraged the `preferences.php` file to gain a [[Reverse Shell]]. Once access was obtained as the `www-data` user, the `.Xauthority` file was exploited to capture the `vanity` user's graphical session, enabling the extraction of sensitive data through a screenshot that revealed their password. Following this, privilege escalation techniques were utilized to run a script as root without a password, allowing for further access to protected content. 
+This medium challenge box employed a variety of attacks and techniques, including a PHP [[Cookie Serialization]] Attack that leveraged the `preferences.php` file to gain a [[_MOCS/Reverse Shells]]. Once access was obtained as the `www-data` user, the `.Xauthority` file was exploited to capture the `vanity` user's graphical session, enabling the extraction of sensitive data through a screenshot that revealed their password. Following this, privilege escalation techniques were utilized to run a script as root without a password, allowing for further access to protected content. 
 
 **Initial [[Nmap]] scan**
 ```bash

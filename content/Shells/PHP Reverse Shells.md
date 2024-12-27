@@ -1,11 +1,9 @@
 ---
-title: 
-description: 
-draft: false
-tags: 
-date: 2024-10-18
+title: PHP Reverse Shells
+tags: shells/reverse/php
+share: true
+date: 2024-12-15
 ---
-
 
 ## Command Line
 
